@@ -2399,7 +2399,11 @@ h1, h2, h3, h4, h5,
 }
 
 .typed-words {
-  color: #ea728c;
+  color: #37c9df;
+  font-style: italic;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+
 }
 
 .comment-form-wrap {
@@ -2788,12 +2792,18 @@ h1, h2, h3, h4, h5,
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  /* padding-top: 7rem;
+  padding-bottom: 7rem; */
+  padding: 3rem;
 }
 
 .block-cta-1.primary-overlay {
   position: relative;
+  /* transform: translateZ(-1px) scale(1.3); */
+}
+
+.container-dc {
+  transform: translateZ(-1px) scale(0.7);
 }
 
 .block-cta-1.primary-overlay:before {
@@ -2803,7 +2813,7 @@ h1, h2, h3, h4, h5,
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(234, 114, 140, 0.9);
+  /* background: rgba(234, 114, 140, 0.9); */
 }
 
 .subscription .form-control {
