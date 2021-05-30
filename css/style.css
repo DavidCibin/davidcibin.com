@@ -94,8 +94,11 @@ h1, h2, h3, h4, h5,
 .dc-block-quick-info-2 {
   margin-top: 80px !important;
 }
-/* .dc-block-quick-info-2-inner {
-  margin-top: 280px !important;
+
+/* .bkgrnd {
+  background-color: #2585fe;
+  background: #2585fe;
+  background-position: top;
 } */
 
 .btn {
