@@ -158,14 +158,19 @@ jQuery(document).ready(function($) {
 	siteMagnificPopup();
 	
 	// nav bar scroll from absolute to fixed
-	// var scrollNavBar = function () {
-	// 	$('#navbar').affix({
-	// 	offset: {
-	// 		top: $('header').height()
-	// 	}
-	// 	});
-	// };	
-	// scrollNavBar();
+	var scrollNavBar = function () {
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+	  
+			if (scroll >= 550) {
+			  $(".site-navbar").addClass("my-navbar");
+			}
+			if (scroll < 100) {
+			  $(".site-navbar").removeClass("my-navbar");
+			}
+		});
+	};	
+	scrollNavBar();
 
 	var siteCarousel = function () {
 		if ( $('.owl-carousel-2').length > 0 ) {
