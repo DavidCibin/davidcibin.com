@@ -1695,3 +1695,9 @@
 		padding-bottom: 7px!important;
 	}
 }
+
+@media (min-width: 576px) {
+	.maincontainer {
+	  margin: 0 auto !important;
+	}
+  }
