@@ -144,18 +144,28 @@ jQuery(document).ready(function($) {
 	    }
 	  });
 
+	  
 	  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-	    disableOn: 700,
-	    type: 'iframe',
-	    mainClass: 'mfp-fade',
-	    removalDelay: 160,
-	    preloader: false,
-
-	    fixedContentPos: false
-	  });
+		  disableOn: 700,
+		  type: 'iframe',
+		  mainClass: 'mfp-fade',
+		  removalDelay: 160,
+		  preloader: false,
+		  
+		  fixedContentPos: false
+		});
 	};
 	siteMagnificPopup();
-
+	
+	// nav bar scroll from absolute to fixed
+	// var scrollNavBar = function () {
+	// 	$('#navbar').affix({
+	// 	offset: {
+	// 		top: $('header').height()
+	// 	}
+	// 	});
+	// };	
+	// scrollNavBar();
 
 	var siteCarousel = function () {
 		if ( $('.owl-carousel-2').length > 0 ) {

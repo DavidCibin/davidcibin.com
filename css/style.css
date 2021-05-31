@@ -459,6 +459,10 @@ h1, h2, h3, h4, h5,
   border-radius: 30px;
 }
 
+/* header {
+	height:55px;
+} */
+
 /* Navbar */
 .site-navbar {
   margin-bottom: 0px;
@@ -466,6 +470,20 @@ h1, h2, h3, h4, h5,
   position: absolute;
   top: 2rem;
   width: 100%;
+  -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+    transition: .5s all ease-out;
+}
+.my-navbar {
+  margin-bottom: 0px;
+  z-index: 1999;
+  position: fixed;
+  top: 0rem;
+  width: 100%;
+  -webkit-transition: .5s all ease-out;
+    -o-transition: .5s all ease-out;
+    transition: .5s all ease-out;
+  background: #000000bf;
 }
 
 .site-navbar.transparent {
@@ -2672,7 +2690,7 @@ h1, h2, h3, h4, h5,
 .block-quick-info-2 .quick-info-2 .icon {
   font-size: 3rem;
   color: #b3b3b3;
-  color: #ea728c;
+  color: #37c9df;
 }
 
 .block-quick-info-2 .quick-info-2 .text .heading {
