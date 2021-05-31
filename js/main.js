@@ -172,6 +172,23 @@ jQuery(document).ready(function($) {
 	};	
 	scrollNavBar();
 
+	// nav bar scroll from absolute to fixed
+	var sideDivSlider = function () {
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+			
+		if (scroll < 200) {
+			$(".left-slider").addClass("active");
+			$(".right-slider").addClass("active");
+		}
+		if (scroll >= 300) {
+			$(".left-slider").removeClass("active");
+			$(".right-slider").removeClass("active");
+		}
+		});
+	};	
+	sideDivSlider();
+
 	var siteCarousel = function () {
 		if ( $('.owl-carousel-2').length > 0 ) {
 			$('.owl-carousel-2').owlCarousel({
