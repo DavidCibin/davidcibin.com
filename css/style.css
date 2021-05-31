@@ -2738,14 +2738,12 @@ h1, h2, h3, h4, h5,
   border-radius: 4px;
 }
 
-.block-services-1 .block-service-1-card .thumbnail-link img {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
-}
+/* .block-services-1 .block-service-1-card .thumbnail-link img {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0);
+  transform: rotateY(0);
+  transition: transform .5s linear 0s;
+} */
 
 .block-services-1 .block-service-1-card .block-service-1-heading {
   font-size: 20px;
@@ -2759,11 +2757,12 @@ h1, h2, h3, h4, h5,
   color: #ea728c;
 }
 
-.block-services-1 .block-service-1-card:hover .thumbnail-link img, .block-services-1 .block-service-1-card:focus .thumbnail-link img {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-}
+/* .block-services-1 .block-service-1-card:hover .thumbnail-link img, .block-services-1 .block-service-1-card:focus .thumbnail-link img {
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  transition: transform .5s linear 0s;
+} */
 
 .block-half-content-1 .block-half-content-img,
 .block-half-content-1 .block-half-content-text {
@@ -2907,3 +2906,61 @@ h1, h2, h3, h4, h5,
   color: white;
   transform: rotateY(180deg);
 }
+
+/* from codepen */
+.maincontainer {
+    width: 302px;
+    height: 299px;
+    margin: 10px;
+    float: left; /* stack each div horizontally */
+}
+
+.card-back h2 {
+    position: absolute;
+}
+
+.card-back p {
+    position: absolute;
+    top: 50px;
+    font-size: 15px;
+}
+
+.card-front h2 {
+    position: absolute;
+    padding: 10px;
+    top: 200px;
+    color: #000;
+}
+
+/* style the maincontainer class with all child div's of class .card-front */
+.maincontainer > .card-front {
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);    
+    width: 302px;
+    height: 290px;    
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform .5s linear 0s;
+}
+
+/* style the maincontainer class with all child div's of class .card-back */
+.maincontainer > .card-back {
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: #262626;
+    color: #fff;
+    width: 302px;
+    height: 290px;
+    border-radius: 10px;
+    padding: 5px;
+    backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+    transition: transform .5s linear 0s;
+}
+
+.maincontainer:hover > .card-front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.maincontainer:hover > .card-back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
