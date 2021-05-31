@@ -2906,18 +2906,18 @@ h1, h2, h3, h4, h5,
 .maincontainer > .card-back {
     position: absolute;
     transform: perspective(600px) rotateY(180deg);
-    background: #262626;
+    background: #535353;
     color: #fff;
     width: 302px;
     height: 290px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px;
     backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
     transition: transform .5s linear 0s;
 }
 
 .card-front img {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .maincontainer:hover > .card-front {
