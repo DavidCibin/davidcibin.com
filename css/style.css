@@ -2959,13 +2959,12 @@ h1, h2, h3, h4, h5,
 .aboutme {
   -webkit-box-shadow: 0 15px 30px 0 #0000008a;
   box-shadow: 0 15px 30px 0 #0000008a;
-  border: 1px solid green;
 }
 
 .left-slider {
   display: flex;
- justify-content: center;
- align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .left-slider img {
  max-width: auto;
@@ -3004,5 +3003,19 @@ h1, h2, h3, h4, h5,
   height: 100%;
   opacity: 0;
   width: 100%;
+}
+
+.footer {
+  background: #000000bf;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-footer {
+  -webkit-box-shadow: 0 10px 20px 0 #0000001f;
+  box-shadow: 0 10px 20px 0 #0000001f;
 }
 
