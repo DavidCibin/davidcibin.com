@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body onload="msgDiv()">
 
   <div class="site-wrap">
     <div class="site-mobile-menu">
@@ -85,7 +85,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10 dc-col-md-10">
-              <div id="confirmation">
+              <div id="confirmation" class="show-msg">
                 <h2>Your message was received. Thank you!</h2>
               </div>
               <div class="row justify-content-center mb-4">
@@ -365,8 +365,8 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <input type="hidden" name="_captcha" value="false">
-                  <input type="hidden" name="_next" value="http://ddcibin-pf01.surge.sh/index.html">
-                  <button onclick="emailSubmit()" class="sub-button" type="submit" value="Send Message"
+                  <input type="hidden" name="_next" value="http://ddcibin-pf01.surge.sh/index.html?confirm">
+                  <button id="email-btn" onclick="emailSubmit()" class="sub-button" type="submit" value="Send Message"
                     style="margin-bottom: -35px;">Send Message</button>
                 </div>
               </div>
@@ -399,7 +399,7 @@
   </div>
   <footer class="footer" data-aos="fade" data-aos-delay="900">
     <!-- START footer Copyright  -->
-    <div  id="contact-me" class="col-12 text-md-center text-left">
+    <div id="contact-me" class="col-12 text-md-center text-left">
       <span>
         Copyright &copy;
         <script>document.write(new Date().getFullYear());</script> All rights reserved <i
@@ -425,6 +425,7 @@
   <script src="js/rangeslider.min.js"></script>
   <script src="js/typed.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/emailmsg.js"></script>
 
   <!-- a helper script for vaidating the form-->
   <script language="JavaScript" src="js/gen_validatorv31.js" type="text/javascript"></script>
@@ -443,12 +444,18 @@
       showCursor: true
     });
   </script>
-  <script>
+  <!-- <script>
     function emailSubmit() {
-      setTimeout(function () { document.getElementById("confirmation").style.display = "block"; }, 500);
-      setTimeout(function () { document.getElementById("confirmation").style.display = "none"; }, 3000);
+      let check = true;
     }
-  </script>
+    function msgDiv() {
+      if (check === true) {
+        setTimeout(function () { document.getElementById("confirmation").style.display = "block"; }, 500);
+        setTimeout(function () { document.getElementById("confirmation").style.display = "none"; }, 3000);
+        check = false;
+      }
+    }
+  </script> -->
 
 
 
