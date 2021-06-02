@@ -193,30 +193,34 @@ jQuery(document).ready(function($) {
 		if ( $('.owl-carousel-2').length > 0 ) {
 			$('.owl-carousel-2').owlCarousel({
 		    center: false,
-		    items: 1,
+		    items: 2,
 		    loop: true,
 				stagePadding: 0,
-		    margin: 30,
+		    margin: 0,
 		    autoplay: true,
 		    nav: true,
 				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
 		    responsive:{
-	        600:{
+	        450:{
 	        	
 	        	nav: true,
-	          items: 1
+	          items: 3
+	        },
+			600:{
+	        	nav: true,
+	          items: 4
 	        },
 	        1000:{
 	        	
 	        	stagePadding: 0,
 	        	nav: true,
-	          items: 2
+	          items: 6
 	        },
 	        1200:{
 	        	
 	        	stagePadding: 0,
 	        	nav: true,
-	          items: 2
+	          items: 8
 	        }
 		    }
 			});
@@ -224,7 +228,7 @@ jQuery(document).ready(function($) {
 
 		$('.slide-one-item').owlCarousel({
 	    center: false,
-	    items: 1,
+	    items: 2,
 	    loop: true,
 			stagePadding: 0,
 	    margin: 0,

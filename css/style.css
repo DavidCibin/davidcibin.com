@@ -35,6 +35,10 @@ h1, h2, h3, h4, h5,
   font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+h2 {
+  color: #37c9df;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -2826,9 +2830,22 @@ h1, h2, h3, h4, h5,
 }
 
 .block-testimony {
-  padding: 30px;
-  border: 1px solid #efefef;
+  /* padding: 30px; */
+  /* border: 1px solid #efefef; */
 }
+
+.block-testimony img {
+  width: 50px !important;
+  margin-top: -20px;
+  transform: translateZ(-1px) scale(1.15);
+  transition: all .2s ease-in-out;
+}
+
+.block-testimony img:hover {
+  transform: translateZ(-1px) scale(1.0);
+  transition: all .2s ease-in-out;
+}
+
 
 .block-cta-1 {
   background-size: cover;
