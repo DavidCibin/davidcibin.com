@@ -444,18 +444,18 @@
       showCursor: true
     });
   </script>
-  <!-- <script>
-    function emailSubmit() {
-      let check = true;
+  <script>
+    $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
+    $(window).on('load', function () {
+      setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+    });
+    function removeLoader() {
+      $("#loadingDiv").fadeOut(500, function () {
+        // fadeOut complete. Remove the loading div
+        $("#loadingDiv").remove(); //makes page more lightweight 
+      });
     }
-    function msgDiv() {
-      if (check === true) {
-        setTimeout(function () { document.getElementById("confirmation").style.display = "block"; }, 500);
-        setTimeout(function () { document.getElementById("confirmation").style.display = "none"; }, 3000);
-        check = false;
-      }
-    }
-  </script> -->
+  </script>
 
 
 
