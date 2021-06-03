@@ -35,7 +35,13 @@ h1, h2, h3, h4, h5,
   font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-h2 {
+h2, h5 {
+  color: #37c9df;
+}
+.split {
+  color: #ea728c;
+}
+.portfolio-links {
   color: #37c9df;
 }
 
@@ -2897,13 +2903,22 @@ h2 {
 }
 
 .card-back h2 {
-    position: absolute;
+  position: absolute;
+  padding: 5px;
+}
+
+.card-back h5 {
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
 }
 
 .card-back p {
-    position: absolute;
-    top: 50px;
-    font-size: 15px;
+  position: absolute;
+  top: 50px;
+  font-size: 15px;
+  padding: 10px;
+  margin-right: 7px;
 }
 
 .card-front h2 {
@@ -3152,5 +3167,31 @@ h2 {
     height:100%;
     background-color:#000;
 }
+
+
+.card-image {
+	position: relative;
+	max-width: 100%;
+	float: left;
+  border-radius: 5px;
+	}
+    
+.card-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 50px 5px rgb(0 0 0);
+  -moz-box-shadow: inset 0 0 50px 5px rgb(0 0 0);
+  -webkit-box-shadow: inset 0 0 50px 5px rgb(0 0 0);
+  } 
+
+
+
+
+
 
 
