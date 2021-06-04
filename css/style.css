@@ -3252,6 +3252,9 @@ h2, h5 {
   background-color: #555;
 }
 
+.arrows {
+  opacity: 0.3 !important;
+}
 
 
 

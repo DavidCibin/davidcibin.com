@@ -223,7 +223,7 @@ jQuery(document).ready(function($) {
 		    margin: 0,
 		    autoplay: true,
 		    nav: true,
-				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+				navText: ['<span class="arrows icon-keyboard_arrow_left">', '<span class="arrows icon-keyboard_arrow_right">'],
 		    responsive:{
 	        450:{
 	        	
