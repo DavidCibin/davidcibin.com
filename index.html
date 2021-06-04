@@ -23,6 +23,7 @@
 </head>
 
 <body onload="msgDiv()">
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
   <div class="site-wrap">
     <div class="site-mobile-menu">
@@ -41,13 +42,13 @@
         <div class="row align-items-center">
           <div class="col-11 col-xl-4">
             <h1 class="mb-0 site-logo">
-              <a href="index.html" class="text-white mb-0">DavidCibin<span class="text-primary">.</span></a>
+              <a href="/" class="text-white mb-0">DavidCibin<span class="text-primary">.</span></a>
             </h1>
           </div>
           <div class="col-12 col-md-8 d-none d-xl-block">
             <nav class="site-navigation position-sticky text-right" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html"><span>Home</span></a></li>
+                <li class="active"><a href="/"><span>Home</span></a></li>
                 <!-- <li class="has-children">
                   <a href="services.html"><span>Services</span></a>
                   <ul class="dropdown arrow-top">
@@ -93,12 +94,15 @@
                 <div class="col-md-10 text-left">
                   <h1 data-aos="fade-up" class="mb-5 dc-mb-5">My Name is David<span class="text-primary">.</span></h1>
                   <h1 data-aos="fade-up" class="mb-5 dc-mb-5">I'm a <span class="typed-words"></span></h1>
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <span class="scroll-icon">
+        <span class="scroll-icon__dot"><i class="arrow up"></i></span>
+      </span>
       </div>
     </div>
     <!-- START header main image -->
@@ -248,7 +252,7 @@
               <div class="card-back">
                 <h2>Emoji Slot Machine</h2>
                 <p> A slot machine game using emojis as a theme. This game was developed using Javascript, HTML, CSS and DOM manipulation.</p>
-                  <h5><a class="portfolio-links" href="http://emoji-slot.surge.sh" target="_blank">Launch </a><span class="split">| </span>  <a class="portfolio-links" href="https://github.com/DavidCibin/Emoji-Slot-Machine" target="_blank">GitHub</a></h5>
+                  <h5><a class="portfolio-links" href="/slot-machine" target="_blank">Launch </a><span class="split">| </span>  <a class="portfolio-links" href="https://github.com/DavidCibin/Emoji-Slot-Machine" target="_blank">GitHub</a></h5>
               </div>
               <div class="card-front">
                 <div class="card-image">
@@ -264,7 +268,7 @@
               <div class="card-back">
                 <h2>Tic-Tac-Toe</h2>
                 <p>Tic-Tac-Toe, an old west themed game. This game was developed using Javascript, HTML, CSS and DOM manipulation.</p>
-                  <h5><a class="portfolio-links" href="http://western-tic-tac-toe.surge.sh" target="_blank">Launch </a><span class="split">| </span>  <a class="portfolio-links" href="https://github.com/DavidCibin/Emoji-Slot-Machine" target="_blank">GitHub</a></h5>
+                  <h5><a class="portfolio-links" href="/tic-tac-toe" target="_blank">Launch </a><span class="split">| </span>  <a class="portfolio-links" href="https://github.com/DavidCibin/Emoji-Slot-Machine" target="_blank">GitHub</a></h5>
               </div>
               <div class="card-front">
                 <div class="card-image">
@@ -428,7 +432,7 @@
           
               <div class="d-block block-testimony mx-auto text-center">
                 <div class="person w-25 mx-auto mb-4">
-                  <img width=40 align="left" src="https://img2.pngio.com/indesign-icon-png-114663-free-icons-l-1158711-png-images-pngio-indesign-logo-png-512_512.png"/> 
+                  <img width=40 align="left" src="https://i.ibb.co/37QzrSJ/indesign-icon.png"/> 
                 </div>
               </div>
 
@@ -485,7 +489,7 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <input type="hidden" name="_captcha" value="false">
-                  <input type="hidden" name="_next" value="http://ddcibin-pf01.surge.sh/index.html?confirm">
+                  <input type="hidden" name="_next" value="http://www.davidcibin.com/?confirm">
                   <button id="email-btn" onclick="emailSubmit()" class="sub-button" type="submit" value="Send Message"
                     style="margin-bottom: -35px;">Send Message</button>
                 </div>
@@ -499,14 +503,17 @@
           <!-- START footer box right side  -->
           <div class="col-md-5" data-aos="fade-up" data-aos-delay="500">
             <div class="p-4 mb-3 bg-white pre-footer">
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+              <p class="mb-0 font-weight-bold">Location</p>
+              <p class="mb-3">Greater Boston</p>
 
               <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+              <p class="mb-3"><a href="tel:+15088253226">(508) 825-3226</a></p>
 
               <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+              <p class="mb-3"><a href="#">info@davidcibin.com</a></p>
+
+              <p class="mb-0 font-weight-bold">Resume</p>
+              <p class="mb-3"><a href="misc/David-Cibin-Resume.pdf">David Cibin <script>document.write(new Date().getFullYear());</script> Resume</a></p>
             </div>
           </div>
           <!-- END footer box right side  -->
@@ -547,7 +554,8 @@
   <script src="js/main.js"></script>
   <script src="js/emailmsg.js"></script>
 
-  <script>  // typing effect (loader)
+  <script>  
+    // typing effect (loader)
     var typed = new Typed('.typed-words', {
       strings: ["full-stack developer", "graphic designer"],
       typeSpeed: 80,
@@ -557,19 +565,25 @@
       loop: true,
       showCursor: true
     });
-  </script>
-
-  <script> // page loader effect
+     
+    // page loader effect
     $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
     $(window).on('load', function () {
-      setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+      setTimeout(removeLoader, 1000); //wait for page load PLUS two seconds.
     });
     function removeLoader() {
       $("#loadingDiv").fadeOut(500, function () {
         // fadeOut complete. Remove the loading div
         $("#loadingDiv").remove(); //makes page more lightweight 
+        document.getElementsByTagName("BODY")[0].style.overflow = "auto";
       });
     }
+
+    // When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		}
   </script>
 
 </body>
