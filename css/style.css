@@ -3169,7 +3169,6 @@ h2, h5 {
     background-color:#000;
 }
 
-
 .card-image {
 	position: relative;
 	max-width: 100%;
@@ -3197,7 +3196,6 @@ h2, h5 {
   75%  { transform: translateY(.75em); opacity: 0; }
   100% { transform: translateY(0); opacity: 0; }
 }
-
 
 .scroll-icon__dot {
   display: block;
