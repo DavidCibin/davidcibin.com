@@ -2971,6 +2971,11 @@ h2, h5 {
     margin: 8px auto !important;
   }
 }
+@media (min-width: 768px) {
+.about-img {
+  justify-content: center;
+  display: flex;
+}
 
 
 /* side div slider */
@@ -3003,10 +3008,8 @@ h2, h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.left-slider img {
- max-width: auto;
- max-height: 400px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .right-slider h2{
