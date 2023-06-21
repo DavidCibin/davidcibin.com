@@ -1,0 +1,165 @@
+body {
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #836b55;
+    font-family: 'Rye', cursive;
+    background-image: url(../images/wanted.png), url(../images/wood.jpg);;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: auto, 80%;
+}
+
+h1 {
+    font-size: 5em;
+    margin-top: 0;
+}
+h2 {
+    margin-top: 5px;
+    font-size: 40px;
+}
+
+section.board {
+    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(3, 10vmin);
+    grid-template-columns: repeat(3, 10vmin);
+    grid-gap: 0vmin;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#sq0, #sq3, #sq6 {
+    border-right: 2mm ridge #bba28699;
+}
+
+#sq2, #sq5, #sq8 {
+    border-left: 2mm ridge #bba28699;	
+}
+
+#sq3, #sq4, #sq5 {
+    border-top: 2mm ridge #bba28699;
+    border-bottom: 2mm ridge #bba28699;
+}
+
+div {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img.gun-shot{
+    width: 100%;
+}
+
+.space {
+    background-color: #ece1d5;
+}
+
+.space:hover {
+    background-color: #a49b92;
+}
+
+button {
+    display: grid;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    padding: 8px 5px;
+    border-color: #a49b92;
+    border-radius: 8px;
+    white-space: nowrap;
+    width: auto;
+    color: #2d2a27;
+    background-color: rgb(221, 184, 136);
+    font-size: 14px;
+    font-family: 'Rye', cursive;
+}
+
+#audio {
+    /* margin-bottom: 20px; */
+    /* margin-top: -160px; */
+    background-color: #836b55;
+    border-radius: 14px;
+    background-image: url(../images/audioOff.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: center;
+    border: 5px double rgb(204 170 127);
+    width: 30px;
+    height: 30px;
+}
+
+.menu {
+    display: inline-flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+#details a {
+    text-decoration: none;
+    color: #463a2f;
+}
+#details {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: fit-content;
+    padding: 0;
+    background-color: #d6be97;
+    visibility: collapse;
+    position: absolute;
+    border-radius: 11px;
+    border: 5px double white;
+    box-shadow: 0 0 34px rgb(90 84 84);
+    bottom: 200px;
+    height: 10%;
+    display: inline-grid;
+    grid-template-columns: 40px auto 40px;
+    grid-template-areas: "github profile linkedin";
+}
+#info {
+    font-family: Georgia;
+    font-size: 18px !important;
+    border-radius: 14px;
+    border: 5px double rgb(173, 169, 169);
+    cursor: help;
+    background-color: #836b55;
+    border-radius: 14px;
+    background-image: url(../images/info.png);
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center;
+    border: 5px double rgb(204 170 127);
+    width: 30px;
+    height: 30px;
+}
+
+.linkedin img, .github img{
+    height: 35px;
+}
+.github {
+    grid-area: github;
+    margin-right: 15px;
+}
+.linkedin {
+    grid-area: linkedin;
+    margin-left: 15px;
+}
+.profile {
+    grid-area: profile;
+}
+.active {
+    outline: 1px solid #575757;
+    filter: brightness(0.9);
+    box-shadow: 1px 0px 6px 3px #0000005e;
+}
