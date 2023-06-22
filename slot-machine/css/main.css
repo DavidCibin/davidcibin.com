@@ -1,0 +1,481 @@
+@font-face {
+    font-family: 'Segment14'; /*a name to be used later*/
+    src: url(../fonts/Segment14.otf) /*URL to font*/
+}
+
+html {
+    box-sizing: border-box;
+    background: url(../images/background-responsive.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }  
+  
+  /* The Universal Selector */
+  *, /* All elements*/
+  *::before, /* All ::before pseudo-elements */
+  *::after { /* All ::after pseudo-elements */
+    /* height & width will now include border & padding by default
+       but can be over-ridden as needed */
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Verdana', cursive;
+    cursor: pointer;
+    color: white;
+    padding-top: 10%;
+  }
+
+  main{
+    width: 350px;
+    height: 510px;
+    border: 5px goldenrod double;
+    border-radius: 68px/141px;
+    background: rgb(255,239,158);
+    background: linear-gradient(180deg, rgba(255,239,158,1) 0%, rgba(255,228,88,1) 13%, rgba(253,221,56,1) 16%, rgba(255,237,142,1) 18%, rgba(255,239,115,1) 20%, rgba(253,234,45,1) 22%, rgba(252,253,38,1) 33%, rgba(255,255,173,1) 40%, rgba(255,254,206,1) 47%, rgba(255,249,153,1) 50%, rgba(255,246,190,1) 54%, rgba(254,229,122,1) 63%, rgba(254,235,85,1) 68%, rgba(255,233,148,1) 73%, rgba(253,212,58,1) 86%, rgba(255,233,103,1) 94%, rgba(252,235,69,1) 100%);
+}
+
+  section#header {
+    width: 200px;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4px;
+    margin-top: -33px;
+    margin-bottom: 23px;
+    font-size: 14px;
+    text-align: center;
+    border: 5px goldenrod double;
+    border-radius: 55px/144px 140px 0px 0px;
+    -webkit-animation: glow 0.6s ease-in-out infinite alternate;
+    -moz-animation: glow 0.6s ease-in-out infinite alternate;
+    animation: glow 0.6s ease-in-out infinite alternate;
+    background: rgb(255,239,158);
+    background: linear-gradient(180deg, rgba(255,239,158,1) 0%, rgba(255,228,88,1) 13%, rgba(253,221,56,1) 16%, rgba(255,237,142,1) 18%, rgba(255,239,115,1) 20%, rgba(253,234,45,1) 22%, rgba(252,253,38,1) 33%, rgba(255,255,173,1) 40%, rgba(255,254,206,1) 47%, rgba(255,249,153,1) 50%, rgba(255,246,190,1) 54%, rgba(254,229,122,1) 63%, rgba(254,235,85,1) 68%, rgba(255,233,148,1) 73%, rgba(253,212,58,1) 86%, rgba(255,233,103,1) 94%, rgba(252,235,69,1) 100%);
+}
+     
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
+    }
+    to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #ff4da6, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6;
+    }
+}
+
+section#status{
+    text-align: center;
+    width: 310px;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 26px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 45px/95px 95px 2px 2px;
+    border: 5px goldenrod double;
+    background-color: #4c1a4c;
+    font-size: 13px;
+    font-weight: bolder;
+    -webkit-animation: glow 0.6s ease-in-out infinite alternate;
+    -moz-animation: glow 0.6s ease-in-out infinite alternate;
+    animation: glow 0.6s ease-in-out infinite alternate;
+    
+}
+section.reels {
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    grid-template-rows: repeat(1, 56vmin);
+    grid-template-columns: repeat(3, 30vmin);
+    border-radius: 55px/145px;
+    font-size: 3em;
+    width: 330px;
+    height: 198px;
+    column-gap: 9px;
+}
+
+#reel1, #reel2, #reel3 {
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    background-color: white;   
+    border: 5px goldenrod double;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    
+}
+#reel1 {
+    border-radius: 35px/117px 0px 0px 115px;
+}
+
+#reel3 {
+    border-radius: 35px/0px 115px 115px 0px;
+}
+
+section.console {
+    width: 310px;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bolder;
+    column-gap: 20px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    border-radius: 44px/0px 0px 75px 75px;
+    border: 5px double goldenrod;
+    background-color: #4c1a4c;
+    justify-content: space-evenly;
+    height: 120px; 
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#audio {
+    margin: 0px 0px 0px 0px;
+    background-color: #ef1010;
+    border-radius: 14px;
+    background-image: url(../images/audioOn.png);
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: center;
+    border: 5px double rgb(173, 169, 169);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    width: 57px;
+    height: 42px;
+}
+
+
+#points {
+    margin: 0px 0px 0px 0px;
+    background-color: #37474F;
+    border: 5px double rgb(173, 169, 169);
+    box-shadow: 0 2px 25px rgba(170, 164, 167, 0.5);
+    border-radius: 14px;
+    font-size: 35px;
+    font-family: 'Segment14';
+    width: 150px;
+    height: 45px;
+    padding-top: 3px;
+}
+
+#spinBtn {
+    margin: 0px 0px 0px 0px;
+    background-color: #ef1010;
+    border-radius: 14px;
+    border: 5px double rgb(173, 169, 169);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    width: 110px;
+    font-size: 27px;
+    height: 45px;
+}
+
+#payout {
+    width: 250px;
+    padding: 190px 0;
+    background-color: gray;
+    visibility: collapse;
+    position: absolute;
+    border-radius: 11px;
+    border: 5px double white;
+    box-shadow: 0 0 34px rgb(90 84 84);
+    background-color: rgb(153 153 153);
+    background-image: url(../images/payout.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 300px;
+    left: 25%;
+}
+#info {
+    background-color: #ef1010;
+    border-radius: 14px;
+    border: 5px double rgb(173, 169, 169);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    background-image: url(../images/info.png);
+    background-repeat: no-repeat;
+    background-size: 30px 28px;
+    background-position: center;
+    cursor: help;
+    margin: 0px 0px 0px 0px;
+    width: 57px;
+    height: 42px;
+}
+
+@media only screen and (max-width: 780px) {
+    .handle {
+        display: none;
+    }
+    .main-slot {
+        top: 100px;
+    }
+}
+
+@media only screen and (min-width: 780px) {
+    
+    /* For desktop: */
+    html {
+        box-sizing: border-box;
+        background: url(../images/background-responsive.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }  
+      
+      /* The Universal Selector */
+      *, /* All elements*/
+      *::before, /* All ::before pseudo-elements */
+      *::after { /* All ::after pseudo-elements */
+        /* height & width will now include border & padding by default
+           but can be over-ridden as needed */
+        box-sizing: inherit;
+      }
+      
+      body {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Verdana', cursive;
+        cursor: pointer;
+        margin-top: -20px;
+      }
+    
+      .main-slot {
+    }
+    main {
+        /* flex: auto; */
+        grid-area: main-slot;
+        width: 780px;
+        height: 610px;
+        border: 5px goldenrod double;
+        border-radius: 68px/250px;
+        background: rgb(255,239,158);
+        background: linear-gradient(180deg, rgba(255,239,158,1) 0%, rgba(255,228,88,1) 13%, rgba(253,221,56,1) 16%, rgba(255,237,142,1) 18%, rgba(255,239,115,1) 20%, rgba(253,234,45,1) 22%, rgba(252,253,38,1) 33%, rgba(255,255,173,1) 40%, rgba(255,254,206,1) 47%, rgba(255,249,153,1) 50%, rgba(255,246,190,1) 54%, rgba(254,229,122,1) 63%, rgba(254,235,85,1) 68%, rgba(255,233,148,1) 73%, rgba(253,212,58,1) 86%, rgba(255,233,103,1) 94%, rgba(252,235,69,1) 100%);
+        display: grid;
+        grid-template-columns: 1fr 0px;
+        grid-template-areas: 
+        "main-slot handle";
+    }
+    
+      section#header {
+        width: 600px;
+        margin: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5px;
+        margin-top: -70px;
+        margin-bottom: 35px;
+        font-size: 40px;
+        text-align: center;
+        border: 5px goldenrod double;
+        border-radius: 55px/144px 140px 0px 0px;
+        -webkit-animation: glow 0.6s ease-in-out infinite alternate;
+        -moz-animation: glow 0.6s ease-in-out infinite alternate;
+        animation: glow 0.6s ease-in-out infinite alternate;
+        background: rgb(255,239,158);
+        background: linear-gradient(180deg, rgba(255,239,158,1) 0%, rgba(255,228,88,1) 13%, rgba(253,221,56,1) 16%, rgba(255,237,142,1) 18%, rgba(255,239,115,1) 20%, rgba(253,234,45,1) 22%, rgba(252,253,38,1) 33%, rgba(255,255,173,1) 40%, rgba(255,254,206,1) 47%, rgba(255,249,153,1) 50%, rgba(255,246,190,1) 54%, rgba(254,229,122,1) 63%, rgba(254,235,85,1) 68%, rgba(255,233,148,1) 73%, rgba(253,212,58,1) 86%, rgba(255,233,103,1) 94%, rgba(252,235,69,1) 100%);
+    }
+         
+    @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073;
+        }
+        to {
+              text-shadow: 0 0 5px #fff, 0 0 10px #ff4da6, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6;
+        }
+    }
+    
+    section#status{
+        text-align: center;
+        width: 720px;
+        margin: auto;
+        margin-bottom: 25px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-radius: 45px/95px 95px 2px 2px;
+        border: 5px goldenrod double;
+        background-color: #4c1a4c;
+        font-size: 30px;
+        font-weight: bolder;
+        -webkit-animation: glow 0.6s ease-in-out infinite alternate;
+        -moz-animation: glow 0.6s ease-in-out infinite alternate;
+        animation: glow 0.6s ease-in-out infinite alternate;
+    }
+    section.reels {
+        justify-content: center;
+        display: flex;
+        grid-template-rows: repeat(1, 30vmin);
+        grid-template-columns: repeat(3, 27vmin);
+        border-radius: 55px/145px;
+        font-size: 10em;
+        width: 740px;
+        height: 290px;
+    }
+    
+    #reel1, #reel2, #reel3 {
+        justify-content: center;
+        align-content: center;
+        display: grid;
+        background-color: white;   
+        border: 5px goldenrod double;
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        
+    }
+    #reel1 {
+        border-radius: 65px/117px 0px 0px 115px;
+    }
+    
+    #reel3 {
+        border-radius: 65px/0px 115px 115px 0px;
+    }
+    
+    section.console {
+        margin: auto;
+        width: 720px;
+        height: 105px;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        border-radius: 50px/0px 0px 95px 95px;
+        border: 5px double goldenrod;
+        background-color: #4c1a4c;
+        align-content: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    #audio {
+        background-color: #ef1010;
+        border-radius: 14px;
+        border: 5px double rgb(173, 169, 169);
+        box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+        height: 65px;
+        width: 65px;
+        background-image: url(../images/audioOn.png);
+        background-repeat: no-repeat;
+        background-size: 50px 50px;
+        background-position: center;
+    }
+    
+    #info {
+        background-color: #ef1010;
+        border-radius: 14px;
+        border: 5px double rgb(173, 169, 169);
+        background-image: url(../images/info.png);
+        box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        background-position: center;
+        text-align: center;
+        cursor: help;
+        width: 65px;
+        height: 65px;
+    }
+    
+    #points {
+        background-color: #37474F;
+        border: 5px double rgb(173, 169, 169);
+        box-shadow: 0 2px 25px rgba(170, 164, 167, 0.5);
+        border-radius: 14px;
+        font-size: 50px;
+        font-family: 'Segment14';
+        padding-top: 6px;
+        height: 65px;
+        width: 250px;
+    }
+    
+    #spinBtn {
+        background-color: #ef1010;
+        border-radius: 14px;
+        border: 5px double rgb(173, 169, 169);
+        box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+        padding-top: 4px;
+        height: 65px;
+        width: 170px;
+        font-size: 35px;
+    }
+    
+    #payout {
+        width: 250px;
+        padding: 190px 0;
+        background-color: gray;
+        visibility: collapse;
+        position: absolute;
+        border-radius: 11px;
+        border: 5px double white;
+        box-shadow: 0 0 34px rgb(90 84 84);
+        background-color: rgb(153 153 153);
+        background-image: url(../images/payout.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        bottom: 300px;
+    }
+    .handle {
+        margin-top: 122px;
+        grid-area: handle;
+        width: 100px;
+        transition-duration: 0.1s;
+        cursor: -webkit-grabbing; cursor: grabbing;
+    }
+    .handle:active {
+        /* transition-duration: 200ms; */
+        grid-area: handle;
+        width: 100px;
+        transform: scaley(-1);
+    }
+    .handle:hover {
+        cursor: -webkit-grab; cursor: grab;
+    }
+}
+
+footer {
+    flex: 30px;
+}
+.dc-header {
+    display: flex;
+}
+.dc-footer {
+    position: fixed;
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    /* font-size: 18px; */
+    vertical-align: middle;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffbc00;
+}
+.github {
+    height: 20px;
+    margin-right: 15px;
+}
+.linkedin {
+    height: 20px;
+    margin-left: 15px;
+}
