@@ -6,6 +6,7 @@ const handle = new Audio('audio/handle.mp3');
 const jackpot = new Audio('audio/jackpot.wav');
 const win = new Audio('audio/win.wav');
 const lose = new Audio('audio/lose.wav');
+const reelStop = new Audio('audio/reelStop.mp3');
 
 const replacementMap = {
     '0': '😭',
@@ -50,7 +51,6 @@ document.getElementById('info').addEventListener('click', infoPayout);
 /*------Functions------*/
 //Spins the reels generating random numbers and assign each number to a predefined emoji scoreboard
 function spinClick() {
-    // console.log("SPIN!?!?");
     // time for the first spint to stop (in seconds)
     const timer = 3;
     spinReels(timer);
@@ -59,6 +59,18 @@ function spinClick() {
     setTimeout(() => {
         statusBar.innerText = `✰ ✰ ✰ ✰ ✰ ✰ GOOD LUCK ✰ ✰ ✰ ✰ ✰ ✰`;
     }, 3600);
+    setTimeout(function() {
+        playReelStop()
+    }, 3500);
+
+    setTimeout(function() {
+        playReelStop()
+    }, 4000);
+
+    setTimeout(function() {
+        playReelStop()
+    }, 4500);
+
     if (totalPoints === 0) {
         init()
     }
@@ -78,12 +90,13 @@ function spinClick() {
         let currentTime = 0;
         let interval = 200;     //Add interval to get a random number every 0.25 second
         let maxTime = 4600;      //For a total time of 4.5 seconds
-        console.log('START')
+        // console.log('START')
         let slotInterval = setInterval(function () {
-            console.log('Interval ==> ', currentTime)
+            // console.log('Interval ==> ', currentTime)
             if (currentTime < maxTime) {
                 currentTime += interval
                 if (sound) {
+                    spin.volume = 0.7
                     spin.play();
                 }
             } else {
@@ -191,7 +204,6 @@ function createSlots(ringId) {
 
         // Add the slot to the row
         const ring = document.querySelector(ringId)
-        console.log(ring, ringId);
         ring.appendChild(slot);
     }
 }
@@ -261,15 +273,15 @@ function getWinner() {
     else {
         return
     }
-    console.log('spin result', reel1, reel2, reel3, results)  //Verify random numbers, check combos found
+    // console.log('spin result', reel1, reel2, reel3, results)  //Verify random numbers, check combos found
 }
 
 // Render function:
 function render() {
     getWinner();
-    console.log('verify my score:before all', totalPoints)  //verify score:before all
+    // console.log('verify my score:before all', totalPoints)  //verify score:before all
     points = 0;
-    console.log('points before', points)
+    // console.log('points before', points)
     if (results === 'jackpot') {
         statusBar.innerText = "✰ ✰ ✰ ✰ ✰ ✰ JACKPOT ✰ ✰ ✰ ✰ ✰ ✰";
         points += 100;
@@ -335,17 +347,17 @@ function render() {
             lose.play();
         }
     }
-    console.log('points after', points)  //verify score:before all
+    // console.log('points after', points)  //verify score:before all
     totalPoints += points
     if (points > 0) {
         score.innerText = `+${points}`
     }
     setTimeout(() => {
         score.innerText = totalPoints
-        console.log(totalPoints)
+        // console.log(totalPoints)
     }, 2000);
 
-    console.log('verify my score:after all', totalPoints)  //verify score:after all
+    // console.log('verify my score after all', totalPoints)  //verify score:after all
 }
 
 //Function for audio effects. Toggle on/off
@@ -380,6 +392,14 @@ function handleSpin() {
         handle.volume = 0.5;
     }
     spinClick()
+}
+
+function playReelStop() {
+    if (sound) {
+        reelStop.volume = 0.1;
+        reelStop.playbackRate = 0.5
+        reelStop.play();
+    }
 }
 
 init();
