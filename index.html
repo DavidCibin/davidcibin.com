@@ -11,6 +11,7 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, Software Engineer, Full Stack, frontend, backend, front-end, back-end, Developer, web developer, TypeScript, React, React.js, React Native, Redux, REST FUL, CRUD, Restful, Web API, NoSQL, PostgreSQL, SQL, Node, Node.js, JQuery, .Net, Angular, Angular.JS, Python, Django, Application Development, Git, GitHub, bootstrap, database, Back end, front end, my SQL, MySQL, gatsby, graphic designer, corel draw, photoshop, indesign">
   <meta name="author" content="David Cibin">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -661,7 +662,11 @@
       // Verify hCaptcha
       const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]').value;
       const formData = new FormData(form);
-      formData.append("h-captcha-response", hCaptchaResponse);
+      console.log(formData, "BEFORE");
+      // formData.delete("access_key", hCaptchaResponse);
+      formData.delete("g-recaptcha-response", hCaptchaResponse);
+      formData.delete("h-captcha-response", hCaptchaResponse);
+      console.log(formData, "BEFORE");
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
       confirmationMsg.innerHTML = "Please wait..."
@@ -724,8 +729,6 @@
 
     gtag('config', 'UA-199111656-1');
   </script>
-
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
 </body>
 
