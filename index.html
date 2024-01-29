@@ -11,7 +11,6 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, Software Engineer, Full Stack, frontend, backend, front-end, back-end, Developer, web developer, TypeScript, React, React.js, React Native, Redux, REST FUL, CRUD, Restful, Web API, NoSQL, PostgreSQL, SQL, Node, Node.js, JQuery, .Net, Angular, Angular.JS, Python, Django, Application Development, Git, GitHub, bootstrap, database, Back end, front end, my SQL, MySQL, gatsby, graphic designer, corel draw, photoshop, indesign">
   <meta name="author" content="David Cibin">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -550,7 +549,7 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <div class="g-recaptcha" data-sitekey="6LeH5V8pAAAAACn_HGvgzXb3Jsc5KvlmcgVAbG9C" data-expired-callback="handleCaptchaExpired" data-callback="recaptchaValidation"></div>
+                  <div class="h-captcha" data-sitekey="97d873a3-5aa1-4c8a-8d5f-29a71cdbe02a" data-expired-callback="handleCaptchaExpired" data-callback="recaptchaValidation" data-captcha="true"></div>
                   <br/>
                   <button id="email-btn" class="sub-button">Send Message</button>
                 </div>
@@ -659,7 +658,10 @@
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      // Verify hCaptcha
+      const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]').value;
       const formData = new FormData(form);
+      formData.append("h-captcha-response", hCaptchaResponse);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
       confirmationMsg.innerHTML = "Please wait..."
@@ -689,7 +691,7 @@
       })
       .then(function() {
         form.reset();
-        grecaptcha.reset();
+        hcaptcha.reset();
         emailBtn.classList.remove("sub-btn-active")
         setTimeout(function () { 
           confirmationMsg.parentElement.style.display = "none"; 
@@ -700,7 +702,7 @@
     });
 
     function handleCaptchaExpired() {
-      grecaptcha.reset();
+      hcaptcha.reset();
       emailBtn.disabled = true
       emailBtn.classList.remove("sub-btn-active")
     }
@@ -722,6 +724,8 @@
 
     gtag('config', 'UA-199111656-1');
   </script>
+
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
 </body>
 
