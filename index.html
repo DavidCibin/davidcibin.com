@@ -11,6 +11,7 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, Software Engineer, Full Stack, frontend, backend, front-end, back-end, Developer, web developer, TypeScript, React, React.js, React Native, Redux, REST FUL, CRUD, Restful, Web API, NoSQL, PostgreSQL, SQL, Node, Node.js, JQuery, .Net, Angular, Angular.JS, Python, Django, Application Development, Git, GitHub, bootstrap, database, Back end, front end, my SQL, MySQL, gatsby, graphic designer, corel draw, photoshop, indesign">
   <meta name="author" content="David Cibin">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -546,8 +547,7 @@
                 <div class="col-md-12">
                   <input type="hidden" name="_captcha" value="false">
                   <input type="hidden" name="_next" value="http://www.davidcibin.com/?confirm">
-                  <button id="email-btn" onclick="emailSubmit()" class="sub-button" type="submit" value="Send Message"
-                    style="margin-bottom: -35px;">Send Message</button>
+                  <button id="email-btn" class="g-recaptcha sub-button" data-sitekey="6LeH5V8pAAAAACn_HGvgzXb3Jsc5KvlmcgVAbG9C" data-callback="emailSubmit">Send Message</button>
                 </div>
               </div>
             </form>
