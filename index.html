@@ -514,7 +514,7 @@
             <!-- <form action="https://formsubmit.co/contact@davidcibin.com" method="POST" class="p-5 bg-white pre-footer"
               style="margin-top: -115px;"> -->
             <form method="POST" id="form">
-              <input type="hidden" name="access_key" value="defebc9c-ffaa-48b2-8506-1d4d06d68368">
+              <input type="hidden" name="access_key" value="99010361-bf4d-499c-b609-56a47ec479fd">
               <input type="hidden" name="subject" value="New Submission from Web3Forms">
               <input type="checkbox" name="botcheck" id="" style="display: none;">
               <div class="row form-group">
@@ -663,7 +663,7 @@
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
-      result.innerHTML = "Please wait..."
+      confirmationDiv.innerHTML = "Please wait..."
 
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -676,6 +676,7 @@
       .then(async (response) => {
         let json = await response.json();
         if (response.status == 200) {
+          confirmationDiv.innerHTML = "Your message was received. Thank you!"
           msgDiv();
         } else {
           console.log(response);
