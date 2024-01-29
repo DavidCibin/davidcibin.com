@@ -511,8 +511,12 @@
 
           <!-- START contact form  -->
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="500">
-            <form action="https://formsubmit.co/contact@davidcibin.com" method="POST" class="p-5 bg-white pre-footer"
-              style="margin-top: -115px;">
+            <!-- <form action="https://formsubmit.co/contact@davidcibin.com" method="POST" class="p-5 bg-white pre-footer"
+              style="margin-top: -115px;"> -->
+            <form method="POST" id="form">
+              <input type="hidden" name="access_key" value="defebc9c-ffaa-48b2-8506-1d4d06d68368">
+              <input type="hidden" name="subject" value="New Submission from Web3Forms">
+              <input type="checkbox" name="botcheck" id="" style="display: none;">
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="fname">First Name</label>
@@ -553,6 +557,7 @@
                 </div>
               </div>
             </form>
+            <div id="result"></div>
           </div>
           <!-- END contact form  -->
 
@@ -610,7 +615,6 @@
   <script src="js/rangeslider.min.js"></script>
   <script src="js/typed.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/emailmsg.js"></script>
 
   <script>
     // typing effect (loader)
@@ -648,7 +652,55 @@
       const emailBtn = document.getElementById("email-btn")
       emailBtn.disabled = false
       emailBtn.classList.add("sub-btn-active")
+    }
 
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+    const confirmationDiv = document.getElementById("confirmation")
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      result.innerHTML = "Please wait..."
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            msgDiv();
+          } else {
+            console.log(response);
+            confirmationDiv.innerHTML = json.message;
+          }
+      })
+      .catch(error => {
+        console.log(error);
+        confirmationDiv.innerHTML = "Something went wrong! Please try again!";
+      })
+      .then(function() {
+        form.reset();
+        setTimeout(function () { 
+          confirmationDiv.style.display = "none"; 
+          result.style.display = "none";
+        }, 6000);
+      });
+    });
+
+    function msgDiv() {
+      if ((window.location.href.split("?", 2)[1]) === "confirm") {
+        setTimeout(function () { document.getElementById("confirmation").style.display = "flex"; }, 500);
+        setTimeout(function () { $(".show-msg").addClass("active"); }, 5000);      
+        
+      }
     }
 
   </script>

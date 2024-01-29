@@ -3120,8 +3120,9 @@ h2, h5 {
   justify-content: center;
   background-color: #ea728c;
   color: #37c9df;
-  position: absolute;
+  position: fixed;
   border-radius: 3px;
+  z-index: 99;
 }
 
 .show-msg.active {
