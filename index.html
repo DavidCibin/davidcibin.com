@@ -58,7 +58,7 @@
                 <li class="active"><a href="/"><span>Home</span></a></li>
                 <li><a href="#about-me"><span>About</span></a></li>
                 <li><a href="#portfolio"><span>Portfolio</span></a></li>
-                <li><a href="#contact-me"><span>Contact</span></a></li>
+                <li onclick="scrollToBottom()"><a href="#contact-me"><span>Contact</span></a></li>
               </ul>
             </nav>
           </div>
@@ -659,14 +659,9 @@
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      // Verify hCaptcha
-      const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]').value;
       const formData = new FormData(form);
-      console.log(formData, "BEFORE");
-      // formData.delete("access_key", hCaptchaResponse);
       formData.delete("g-recaptcha-response", hCaptchaResponse);
       formData.delete("h-captcha-response", hCaptchaResponse);
-      console.log(formData, "BEFORE");
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
       confirmationMsg.innerHTML = "Please wait..."
@@ -715,6 +710,11 @@
     function msgDiv() {
       setTimeout(function () { document.getElementById("confirmation").style.display = "flex"; }, 500);
       setTimeout(function () { $(".show-msg").addClass("active"); }, 5000);      
+    }
+    function scrollToBottom() {
+      // this helps to enforce to show the footer content
+      const scrollingElement = (document.scrollingElement || document.body);
+      scrollingElement.scrollTop = scrollingElement.scrollHeight;     
     }
 
   </script>
