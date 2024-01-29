@@ -29,7 +29,7 @@
 
 </head>
 
-<body onload="msgDiv()">
+<body>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
   <div class="site-wrap">
@@ -688,11 +688,11 @@
       })
       .then(function() {
         form.reset();
+        grecaptcha.reset();
+        emailBtn.classList.remove("sub-btn-active")
         setTimeout(function () { 
-          emailBtn.classList.remove("sub-btn-active")
           confirmationDiv.style.display = "none"; 
           result.style.display = "none";
-          grecaptcha.reset();
         }, 6000);
       });
     });
