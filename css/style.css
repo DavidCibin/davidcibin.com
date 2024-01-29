@@ -3085,15 +3085,6 @@ h2, h5 {
   border-radius: 10rem;
   z-index: -2;
 }
-.sub-btn-active {
-  border: 2px solid #a1effb;
-}
-.sub-btn-active:after {
-  background-color: #37c9df;
-}
-.sub-btn-active:before {
-  background-color: #008fb3;
-}
 .sub-button:before {
   content: '';
   position: absolute;
@@ -3112,7 +3103,15 @@ h2, h5 {
 .sub-button:hover:before {
   width: 100%;
 }
-
+.sub-btn-active {
+  border: 2px solid #a1effb;
+}
+.sub-btn-active:after {
+  background-color: #37c9df;
+}
+.sub-btn-active:before {
+  background-color: #008fb3;
+}
 #confirmation {
   display: none;
   padding: 10px;
@@ -3121,6 +3120,7 @@ h2, h5 {
   background-color: #ea728c;
   color: #37c9df;
   position: fixed;
+  top: 150px;
   border-radius: 3px;
   z-index: 99;
 }
