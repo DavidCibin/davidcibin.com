@@ -647,16 +647,16 @@
       document.documentElement.scrollTop = 0;
     }
 
-    // check reCaptcha validation
-    function recaptchaValidation() {
-      const emailBtn = document.getElementById("email-btn")
-      emailBtn.disabled = false
-      emailBtn.classList.add("sub-btn-active")
-    }
-
+    const emailBtn = document.getElementById("email-btn")
     const form = document.getElementById('form');
     const result = document.getElementById('result');
     const confirmationDiv = document.getElementById("confirmation")
+
+    // check reCaptcha validation
+    function recaptchaValidation() {
+      emailBtn.disabled = false
+      emailBtn.classList.add("sub-btn-active")
+    }
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -674,13 +674,13 @@
         body: json
       })
       .then(async (response) => {
-          let json = await response.json();
-          if (response.status == 200) {
-            msgDiv();
-          } else {
-            console.log(response);
-            confirmationDiv.innerHTML = json.message;
-          }
+        let json = await response.json();
+        if (response.status == 200) {
+          msgDiv();
+        } else {
+          console.log(response);
+          confirmationDiv.innerHTML = json.message;
+        }
       })
       .catch(error => {
         console.log(error);
@@ -689,8 +689,10 @@
       .then(function() {
         form.reset();
         setTimeout(function () { 
+          emailBtn.classList.remove("sub-btn-active")
           confirmationDiv.style.display = "none"; 
           result.style.display = "none";
+          grecaptcha.reset();
         }, 6000);
       });
     });
