@@ -1,4 +1,4 @@
-# David cibin
+# David Cibin
 
 # my portfolio
 
