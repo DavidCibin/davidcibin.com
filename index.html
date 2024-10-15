@@ -690,7 +690,7 @@
     let hcaptchaWidgetId;
 
     // Custom callback function to render the hCaptcha widget
-    const renderHCaptcha = function () {
+    var renderHCaptcha = function () {
       console.log('hCaptcha is ready.');
       // Render the widget and store its widget ID
       hcaptchaWidgetId = hcaptcha.render('hcaptcha-validation', {
