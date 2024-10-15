@@ -11,7 +11,9 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, Software Engineer, Full Stack, frontend, backend, front-end, back-end, Developer, web developer, TypeScript, React, React.js, React Native, Redux, REST FUL, CRUD, Restful, Web API, NoSQL, PostgreSQL, SQL, Node, Node.js, JQuery, .Net, Angular, Angular.JS, Python, Django, Application Development, Git, GitHub, bootstrap, database, Back end, front end, my SQL, MySQL, gatsby, graphic designer, corel draw, photoshop, indesign">
   <meta name="author" content="David Cibin">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <!-- Load hCaptcha SDK with onload callback -->
+<script src="https://hcaptcha.com/1/api.js?onload=renderHCaptcha&render=explicit" async defer></script>
+
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -547,8 +549,6 @@
 
           <!-- START contact form  -->
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="500">
-            <!-- <form action="https://formsubmit.co/contact@davidcibin.com" method="POST" class="p-5 bg-white pre-footer"
-              style="margin-top: -115px;"> -->
             <form method="POST" id="form">
               <input type="hidden" name="access_key" value="b140abe5-e9c8-4c30-bab3-79d76f829cd7">
               <input type="hidden" name="subject" value="New Submission from Web3Forms">
@@ -585,9 +585,10 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <div class="h-captcha" data-sitekey="97d873a3-5aa1-4c8a-8d5f-29a71cdbe02a" data-expired-callback="handleCaptchaExpired" data-callback="recaptchaValidation" data-captcha="true"></div>
+                  <div id="hcaptcha-validation" class="h-captcha"></div>
+
                   <br/>
-                  <button id="email-btn" class="sub-button">Send Message</button>
+                  <button id="email-btn" class="sub-button" type="submit">Send Message</button>
                 </div>
               </div>
             </form>
@@ -686,18 +687,45 @@
     const result = document.getElementById('result');
     const confirmationMsg = document.querySelector("#confirmation h2")
 
+    let hcaptchaWidgetId;
+
+    // Custom callback function to render the hCaptcha widget
+    const renderHCaptcha = function () {
+      console.log('hCaptcha is ready.');
+      // Render the widget and store its widget ID
+      hcaptchaWidgetId = hcaptcha.render('hcaptcha-validation', {
+        sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
+        callback: recaptchaValidation, // Your custom callback for validation
+        'expired-callback': handleCaptchaExpired // Handle expiration
+      });
+    };
+
     // check reCaptcha validation
-    function recaptchaValidation() {
-      emailBtn.disabled = false
-      emailBtn.classList.add("sub-btn-active")
+    function recaptchaValidation(response) {
+      console.log("reCaptcha response", response);
+      
+      if (response) {
+        emailBtn.disabled = false
+        emailBtn.classList.add("sub-btn-active")
+      }
     }
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+      if (!hCaptcha) {
+        e.preventDefault();
+        confirmationMsg.innerHTML = "Please fill out captcha field"
+        msgDiv()
+        return
+      }
+      
       const formData = new FormData(form);
-      formData.delete("g-recaptcha-response", hCaptchaResponse);
-      formData.delete("h-captcha-response", hCaptchaResponse);
       const object = Object.fromEntries(formData);
+      delete object["g-recaptcha-response"]
+      
       const json = JSON.stringify(object);
       confirmationMsg.innerHTML = "Please wait..."
       msgDiv()
@@ -710,42 +738,58 @@
         },
         body: json
       })
+      
       .then(async (response) => {
         let json = await response.json();
-        if (response.status == 200) {
-          confirmationMsg.innerHTML = "Your message was received. Thank you!"
+        
+        // Check for captcha errors
+        if (json.success) {
+          confirmationMsg.innerHTML = "Your message was received. Thank you!";
           msgDiv();
+          form.reset();
+          resetSubmitButton();
+          setTimeout(function () {
+            confirmationMsg.parentElement.style.display = "none";
+            confirmationMsg.parentElement.classList.remove("active");
+            result.style.display = "none";
+          }, 6000);
+        } else if (json.cause === "missing-captcha") {
+          console.log("Captcha verification failed: ", json.message);
+          confirmationMsg.innerHTML = "Captcha verification failed. Please try again.";
         } else {
-          console.log(response);
           confirmationMsg.innerHTML = json.message;
         }
       })
       .catch(error => {
         console.log(error);
         confirmationMsg.innerHTML = "Something went wrong! Please try again!";
-      })
-      .then(function() {
-        form.reset();
-        hcaptcha.reset();
-        emailBtn.classList.remove("sub-btn-active")
-        setTimeout(function () { 
-          confirmationMsg.parentElement.style.display = "none"; 
-          confirmationMsg.parentElement.classList.remove("active")
-          result.style.display = "none";
-        }, 6000);
       });
     });
 
     function handleCaptchaExpired() {
-      hcaptcha.reset();
-      emailBtn.disabled = true
-      emailBtn.classList.remove("sub-btn-active")
+      resetSubmitButton();
+    }
+
+    function resetSubmitButton() {
+      console.log("resetSubmitButton");
+      emailBtn.disabled = true;
+      emailBtn.classList.remove("sub-btn-active");
+
+      // Reset the widget after a delay
+      setTimeout(function () {
+        if (hcaptchaWidgetId !== undefined) {
+          hcaptcha.reset(hcaptchaWidgetId); // Reset the specific widget instance
+        } else {
+          console.error('hCaptcha widget ID is missing or invalid.');
+        }
+      }, 500);
     }
 
     function msgDiv() {
       setTimeout(function () { document.getElementById("confirmation").style.display = "flex"; }, 500);
       setTimeout(function () { $(".show-msg").addClass("active"); }, 5000);      
     }
+    
     function scrollToBottom() {
       // this helps to enforce to show the footer content
       const scrollingElement = (document.scrollingElement || document.body);
@@ -764,6 +808,8 @@
 
     gtag('config', 'UA-199111656-1');
   </script>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 
