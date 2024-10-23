@@ -66,6 +66,10 @@ h2, h5 {
   color: rgba(255, 255, 255, 0.5);
 }
 
+#confirmation {
+  display: none;
+}
+
 .site-wrap:before {
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
