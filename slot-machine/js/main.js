@@ -51,6 +51,7 @@ document.getElementById('info').addEventListener('click', infoPayout);
 /*------Functions------*/
 //Spins the reels generating random numbers and assign each number to a predefined emoji scoreboard
 function spinClick() {
+    confetti.stop()
     // time for the first spint to stop (in seconds)
     const timer = 3;
     spinReels(timer);
@@ -75,7 +76,7 @@ function spinClick() {
         init()
     }
     else {
-        confetti.stop() // confetti stop
+        // confetti.stop() // confetti stop
         totalPoints -= 5
         score.innerText = -5
         setTimeout(() => {
@@ -88,8 +89,8 @@ function spinClick() {
 
         //Block SPIN button for been pressed during spinning
         let currentTime = 0;
-        let interval = 200;     //Add interval to get a random number every 0.25 second
-        let maxTime = 4600;      //For a total time of 4.5 seconds
+        let interval = 200;     //Add interval to get a random number every 0.2 second
+        let maxTime = 4600;      //For a total time of 4.6 seconds
         // console.log('START')
         let slotInterval = setInterval(function () {
             // console.log('Interval ==> ', currentTime)
@@ -273,7 +274,6 @@ function getWinner() {
     else {
         return
     }
-    // console.log('spin result', reel1, reel2, reel3, results)  //Verify random numbers, check combos found
 }
 
 // Render function:
