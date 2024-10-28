@@ -2977,7 +2977,7 @@ h2, h5 {
 }
 @media (min-width: 768px) {
 .about-img {
-  justify-content: center;
+  justify-content: end;
   display: flex;
 }
 
