@@ -47,6 +47,8 @@ document.getElementById('spinBtn').addEventListener('click', spinClick);
 document.getElementById('handle').addEventListener('click', handleSpin);
 document.getElementById('audio').addEventListener('click', toggleAudio);
 document.getElementById('info').addEventListener('click', infoPayout);
+document.getElementById('payoutClose').addEventListener('click', infoPayout);
+document.getElementById('overlay').addEventListener('click', infoPayout);
 
 
 /*------Functions------*/
@@ -379,6 +381,8 @@ function toggleAudio() {
 
 //Function for the info button - display the payout
 function infoPayout() {
+    console.log("click");
+    
     if (infoMenu.style.visibility === "collapse") {
         infoMenu.style.visibility = "unset";
         overlay.style.display = "unset";

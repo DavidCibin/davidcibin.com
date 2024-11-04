@@ -212,7 +212,7 @@ section.console {
     border: 5px double white;
     box-shadow: 0 0 34px rgb(90 84 84);
     background-color: rgb(153 153 153);
-    background-image: url(../images/payout.jpg);
+    background-image: url(../images/payout.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     bottom: 80px;
@@ -223,6 +223,7 @@ section.console {
     top: -25px;
     right: -25px;
     width: 25px;
+    pointer-events: none;
 }
 #info {
     position: relative;
@@ -455,7 +456,7 @@ section.console {
         border: 5px double white;
         box-shadow: 0 0 34px rgb(90 84 84);
         background-color: rgb(153 153 153);
-        background-image: url(../images/payout.jpg);
+        background-image: url(../images/payout.jpeg);
         background-repeat: no-repeat;
         background-position: center;
         bottom: 80px;

@@ -29,7 +29,7 @@ The game will be over when it reaches 0 point.
 Did you know?
 By law, in Nevada the minimum payout for a slot machine is 75% and in New Jersey the minimum is 83%. Trust me, the “house” always wins!!
 
-![Emoji Slot Machine Payout](images/payout.jpg)
+![Emoji Slot Machine Payout](images/payout.jpeg)
  
 ## Technology
  
