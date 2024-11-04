@@ -40,6 +40,7 @@ let statusBar = document.getElementById('statusBar')
 let audio = document.getElementById('audio');
 let newGame = document.getElementById('spinBtn');
 let infoMenu = document.getElementById("payout");
+let overlay = document.getElementById("overlay");
 
 /*------Event Listeners------*/
 document.getElementById('spinBtn').addEventListener('click', spinClick);
@@ -380,8 +381,10 @@ function toggleAudio() {
 function infoPayout() {
     if (infoMenu.style.visibility === "collapse") {
         infoMenu.style.visibility = "unset";
+        overlay.style.display = "unset";
     } else {
         infoMenu.style.visibility = "collapse";
+        overlay.style.display = "none";
     }
 }
 

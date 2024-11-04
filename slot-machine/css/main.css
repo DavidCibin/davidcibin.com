@@ -31,6 +31,17 @@ html {
     font-family: 'Verdana', cursive;
     cursor: pointer;
     color: white;
+    position: relative;
+    z-index: 5;
+  }
+
+  #overlay {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: #00000099;
   }
 
   #main {
@@ -204,10 +215,11 @@ section.console {
     background-image: url(../images/payout.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    bottom: 300px;
-    left: 25%;
+    bottom: 80px;
+    z-index: 15;
 }
 #info {
+    position: relative;
     background-color: #ef1010;
     border-radius: 14px;
     border: 5px double rgb(173, 169, 169);
@@ -261,7 +273,6 @@ section.console {
         min-height: 100vh;
         font-family: 'Verdana', cursive;
         cursor: pointer;
-        margin-top: -20px;
       }
     
       .main-slot {
@@ -441,7 +452,7 @@ section.console {
         background-image: url(../images/payout.jpg);
         background-repeat: no-repeat;
         background-position: center;
-        bottom: 300px;
+        bottom: 80px;
     }
     .handle {
         margin-top: 122px;
