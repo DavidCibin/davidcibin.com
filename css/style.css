@@ -2910,6 +2910,7 @@ h2, h5 {
 .card-back h2 {
   position: absolute;
   padding: 5px;
+  font-size: 28px !important;
 }
 
 .card-back h5 {
@@ -2921,7 +2922,7 @@ h2, h5 {
 .card-back p {
   position: absolute;
   top: 50px;
-  font-size: 15px;
+  font-size: 14px;
   padding: 10px;
   margin-right: 7px;
   line-height: 21px;
