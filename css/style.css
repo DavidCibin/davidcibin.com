@@ -2757,13 +2757,6 @@ h2, h5 {
   border-radius: 4px;
 }
 
-/* .block-services-1 .block-service-1-card .thumbnail-link img {
-  -webkit-transform: rotateY(0deg);
-  -ms-transform: rotateY(0);
-  transform: rotateY(0);
-  transition: transform .5s linear 0s;
-} */
-
 .block-services-1 .block-service-1-card .block-service-1-heading {
   font-size: 20px;
 }
@@ -2775,13 +2768,6 @@ h2, h5 {
 .block-services-1 .block-service-1-card .block-service-1-heading a:hover {
   color: #ea728c;
 }
-
-/* .block-services-1 .block-service-1-card:hover .thumbnail-link img, .block-services-1 .block-service-1-card:focus .thumbnail-link img {
-  -webkit-transform: rotateY(-180deg);
-  -ms-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-  transition: transform .5s linear 0s;
-} */
 
 .block-half-content-1 .block-half-content-img,
 .block-half-content-1 .block-half-content-text {
@@ -2840,20 +2826,17 @@ h2, h5 {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.block-testimony {
-  /* padding: 30px; */
-  /* border: 1px solid #efefef; */
-}
 
 .block-testimony img {
-  width: 50px !important;
+  height: 50px !important;
+  width: auto !important;
   margin-top: -20px;
-  transform: translateZ(-1px) scale(1.15);
+  transform: translateZ(-1px) scale(1);
   transition: all .2s ease-in-out;
 }
 
 .block-testimony img:hover {
-  transform: translateZ(-1px) scale(1.0);
+  transform: translateZ(-1px) scale(.8);
   transition: all .2s ease-in-out;
 }
 
@@ -2862,8 +2845,6 @@ h2, h5 {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* padding-top: 7rem;
-  padding-bottom: 7rem; */
   padding: 7rem;
 }
 
